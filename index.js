@@ -1,3 +1,5 @@
+// Course By Fatah Gabrial on Udemy https://www.udemy.com/course/complete-javascript-es6-course/
+
 // var and let
 
 for (let i = 0; i < 45; i++) {
@@ -8,6 +10,8 @@ for (let i = 0; i < 45; i++) {
 
     document.getElementsByTagName('section')[0].appendChild(div);
 }
+// --------------------------------------------------------------------------
+
 
 // Using the const keyword
 
@@ -19,6 +23,8 @@ const currentYear = 2020;
 
 const age = currentYear - birthYear;
 console.log(age);
+// --------------------------------------------------------------------------
+
 
 // Working with Template Strings
 function sendEmail(name, price) {
@@ -32,4 +38,13 @@ function sendEmail(name, price) {
 }
 
 sendEmail('Darshan', 300);
+// --------------------------------------------------------------------------
 
+
+// Spread Oprator 
+var mobiles = ["Oppo", "Vivo", "Mi"];
+var electronics = ["TV", "Fridge", "Home Theatre"];
+var allDevices = ["Amazon Alexa", ...mobiles, "Air purifier", ...electronics];
+
+console.log(allDevices);
+// --------------------------------------------------------------------------
