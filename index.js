@@ -151,3 +151,26 @@ var myNum = setInterval(function () {
 // --------------------------------------------------------------------------
 
 // Working with Class Syntax in JavaScript ES6
+
+class Mobiles {
+    constructor(storage, ram) {
+        this.storage = storage;
+        this.ram = ram;
+    }
+
+    phoneDetails() {
+        console.log(`This mobile has ${this.storage} storage and ${this.ram} RAM`);
+    }
+}
+
+class oldPhones extends Mobiles {
+    constructor() {
+        super("4GB", "1GB");
+    }
+}
+
+let myPhone = new Mobiles("64GB", "8GB");
+myPhone.phoneDetails();
+
+let myOldPhone = new oldPhones();
+myOldPhone.phoneDetails();
