@@ -83,3 +83,71 @@ var person = {
 }
 
 person.printAction();
+// --------------------------------------------------------------------------
+
+// Destructuring in JavaScript ES6
+// destructuring in array
+let [first, , third] = ["Banglore", "Mysore", "Manglore"];
+console.log(first)
+console.log(third)
+
+// Destructuring in objects
+let { title, price } = {
+    title: "Cheese sandwich",
+    price: 40,
+    description: "Chinese sandwih in banglore",
+    ingredients: ["Bread", "Butter", "Cheese"]
+};
+
+console.log(title)
+console.log(price)
+
+// Little bit complex object destructuring
+let vacation = {
+    destination: "Manglore",
+    travelers: 2,
+    activity: "Beach",
+    cost: 4000
+};
+
+function vacationMarketing({ destination, activity }) {
+    return `Let's go to ${destination} near ${activity}`;
+}
+
+console.log(vacationMarketing(vacation));
+// --------------------------------------------------------------------------
+
+// Generator in JavaScript ES6
+
+function* movie() {
+    yield 'Lights';
+    yield 'Camera';
+    yield 'Action';
+}
+
+let action = movie();
+
+console.log(action.next().value);
+console.log(action.next().value);
+console.log(action.next().value);
+console.log(action.next().value);
+
+function* eachItem(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        yield arr[i];
+    }
+}
+
+let myNumbers = eachItem([1, 2, 3, 4, 5, 6, 7]);
+var myNum = setInterval(function () {
+    let myNuber = myNumbers.next();
+    if (myNuber.done) {
+        clearInterval(myNum);
+        console.log("These are my numbers");
+    } else {
+        console.log(myNuber.value);
+    }
+}, 500)
+// --------------------------------------------------------------------------
+
+// Working with Class Syntax in JavaScript ES6
