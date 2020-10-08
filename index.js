@@ -48,3 +48,38 @@ var allDevices = ["Amazon Alexa", ...mobiles, "Air purifier", ...electronics];
 
 console.log(allDevices);
 // --------------------------------------------------------------------------
+
+// Working with objects
+
+var sounds = {
+    alarm: function (times) {
+        console.log("Beep ".repeat(times));
+    },
+    ringTone: function (times) {
+        console.log("Songs ".repeat(times));
+    }
+}
+
+sounds.alarm(3);
+sounds.ringTone(5);
+// --------------------------------------------------------------------------
+
+// Arrow functions 
+let developersList = developers => console.log(developers);
+
+developersList(["Darshan", "John", "Jane"]);
+// --------------------------------------------------------------------------
+
+// Arrow functions with this scope
+var person = {
+    first: "John",
+    actions: ["Bike", "Hike", "Ski", "Suri"],
+    printAction: function () {
+        this.actions.forEach(function (action) {
+            var str = this.first + " likes to " + action;
+            console.log(str);
+        }.bind(this))
+    }
+}
+
+person.printAction();
